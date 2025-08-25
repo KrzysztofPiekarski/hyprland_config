@@ -1,0 +1,201 @@
+# ===== HYPRLAND CONFIGURATION GITIGNORE =====
+
+# ===== USER-SPECIFIC FILES =====
+# Pliki specyficzne dla użytkownika - nie należy ich commitować
+
+# Personal wallpapers directory (użytkownicy mogą mieć różne ścieżki)
+# Uncomment if you want to ignore wallpapers:
+# *.jpg
+# *.png
+# *.jpeg
+# *.webp
+
+# User avatar
+.face
+face.jpg
+face.png
+avatar.*
+
+# ===== CACHE AND TEMPORARY FILES =====
+
+# Hyprland cache
+hypr/hyprland.log
+hypr/.hyprland.log
+hypr/hyprland.log.*
+
+# Waybar cache
+waybar/.waybar-*.pid
+waybar/waybar.log
+
+# Kitty cache
+kitty/.kitty.log
+kitty/kitty.conf.swp
+
+# Dunst cache
+dunst/.dunst.log
+
+# General cache files
+*.cache
+*.tmp
+*.temp
+*.log
+.cache/
+
+# ===== BACKUP FILES =====
+
+# Editor backup files
+*~
+*.swp
+*.swo
+*.bak
+*.backup
+.*.swp
+.*.swo
+
+# Configuration backups
+*.conf.bak
+*.conf.backup
+*.conf.orig
+*.json.bak
+*.jsonc.bak
+*.rasi.bak
+*.css.bak
+
+# Auto-generated backups
+*-backup
+*_backup
+*.old
+
+# ===== RUNTIME FILES =====
+
+# Process IDs
+*.pid
+
+# Lock files
+*.lock
+.lock
+
+# Socket files
+*.sock
+*.socket
+
+# ===== SYSTEM-SPECIFIC FILES =====
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Linux specific
+.directory
+.fuse_hidden*
+
+# ===== DEVELOPMENT FILES =====
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Git files (for nested repos)
+.git/
+.gitmodules
+
+# ===== SENSITIVE INFORMATION =====
+
+# Do not commit files containing sensitive data
+*password*
+*secret*
+*key*
+*token*
+.env
+.env.*
+
+# User-specific paths (hardcoded paths)
+# These might contain personal directory structures
+paths.conf
+user-paths.conf
+
+# ===== OPTIONAL COMPONENTS =====
+
+# If you don't want to share certain optional scripts
+# scripts/personal-*
+# scripts/private-*
+
+# Custom user scripts that might contain sensitive info
+# scripts/*-personal.*
+# scripts/*-private.*
+
+# ===== WALLPAPERS (OPTIONAL) =====
+# Uncomment the section below if you don't want to include wallpapers
+# This is useful if wallpapers are large or copyrighted
+
+# wallpapers/
+# backgrounds/
+# *.jpg
+# *.jpeg
+# *.png
+# *.webp
+# *.gif
+
+# ===== FONTS (OPTIONAL) =====
+# Uncomment if you include custom fonts that shouldn't be shared
+# fonts/
+# *.ttf
+# *.otf
+# *.woff
+# *.woff2
+
+# ===== COMPILED/GENERATED FILES =====
+
+# If any scripts generate compiled files
+*.o
+*.so
+*.a
+*.exe
+
+# Python compiled files (if any python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ===== TESTING AND DEBUG =====
+
+# Test configurations
+test-*
+debug-*
+*.test
+*.debug
+
+# Screenshots from testing
+screenshot-*
+test-screenshot*
+
+# ===== DOCUMENTATION =====
+
+# Generated documentation
+docs/_build/
+docs/build/
+
+# ===== END OF GITIGNORE =====
+
+# ===== NOTES =====
+# 
+# To add your own wallpapers without committing them:
+# 1. Create a local 'wallpapers' directory
+# 2. Add your images there
+# 3. Update hyprpaper.conf with local paths
+# 4. The wallpapers/ directory is ignored by default
+#
+# To add personal scripts:
+# 1. Create scripts with '-personal' or '-private' suffix
+# 2. These will be ignored automatically
+#
+# To backup your current configs before applying these:
+# cp -r ~/.config/hypr ~/.config/hypr-backup
+# cp -r ~/.config/waybar ~/.config/waybar-backup
+# etc.

@@ -1,0 +1,139 @@
+{
+    "custom/spotify": {
+        "exec": "playerctl -p spotify metadata --format '{{artist}} - {{title}}' 2>/dev/null || echo 'No music playing'",
+        "interval": 1,
+        "format": "󰓇 {}",
+        "max-length": 40,
+        "tooltip": true,
+        "tooltip-format": "Click to control playback",
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-right": "spotify",
+        "on-scroll-up": "playerctl -p spotify next",
+        "on-scroll-down": "playerctl -p spotify previous"
+    },
+
+    "custom/disk": {
+        "exec": "df -h /home | awk 'NR==2 {print $5}' | sed 's/%//'",
+        "interval": 30,
+        "format": "󰋊 {}%",
+        "tooltip": true,
+        "tooltip-format": "Disk usage for /home",
+        "states": {
+            "warning": 80,
+            "critical": 95
+        }
+    },
+
+    "custom/uptime": {
+        "exec": "uptime -p | sed 's/up //g'",
+        "interval": 60,
+        "format": "󰔟 {}",
+        "tooltip": true,
+        "tooltip-format": "System uptime"
+    },
+
+    "custom/backlight": {
+        "exec": "light -G",
+        "interval": 1,
+        "format": "󰃠 {:.0f}%",
+        "tooltip": true,
+        "tooltip-format": "Brightness: {:.0f}%",
+        "on-scroll-up": "light -A 5",
+        "on-scroll-down": "light -U 5"
+    },
+
+    "custom/bluetooth": {
+        "exec": "bluetoothctl info | grep -q 'Connected: yes' && echo '󰂯' || echo '󰂲'",
+        "interval": 5,
+        "format": " {}",
+        "tooltip": true,
+        "tooltip-format": "Click to open bluetooth settings",
+        "on-click": "blueman-manager"
+    },
+
+    "custom/vpn": {
+        "exec": "systemctl is-active --quiet openvpn@client && echo '󰖂' || echo '󰖃'",
+        "interval": 10,
+        "format": " {}",
+        "tooltip": true,
+        "tooltip-format": "VPN Status",
+        "on-click": "sudo systemctl start openvpn@client",
+        "on-click-right": "sudo systemctl stop openvpn@client"
+    },
+
+    "custom/notification": {
+        "exec": "dunstctl count waiting",
+        "interval": 1,
+        "format": "󰂚 {}",
+        "tooltip": true,
+        "tooltip-format": "Click to see notifications",
+        "on-click": "dunstctl context",
+        "on-click-right": "dunstctl close-all"
+    },
+
+    "custom/calendar": {
+        "exec": "date '+%d'",
+        "interval": 60,
+        "format": "󰸗 {}",
+        "tooltip": true,
+        "tooltip-format": "Click to open calendar",
+        "on-click": "gnome-calendar"
+    },
+
+    "custom/email": {
+        "exec": "find ~/.local/share/mail/*/INBOX/new -type f | wc -l",
+        "interval": 30,
+        "format": "󰇮 {}",
+        "tooltip": true,
+        "tooltip-format": "Unread emails",
+        "on-click": "thunderbird"
+    },
+
+    "custom/temperature": {
+        "exec": "sensors | grep 'Core 0' | awk '{print $3}' | sed 's/+//' | sed 's/°C//'",
+        "interval": 5,
+        "format": "󰔄 {}°C",
+        "tooltip": true,
+        "tooltip-format": "CPU Temperature",
+        "states": {
+            "warning": 70,
+            "critical": 85
+        }
+    },
+
+    "custom/gpu": {
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null || echo '0'",
+        "interval": 5,
+        "format": "󰒋 {}%",
+        "tooltip": true,
+        "tooltip-format": "GPU Usage",
+        "states": {
+            "warning": 80,
+            "critical": 95
+        }
+    },
+
+    "custom/ram-usage": {
+        "exec": "free -h | awk 'NR==2{printf \"%.0f\", $3/$2 * 100}'",
+        "interval": 5,
+        "format": "󰍛 {}%",
+        "tooltip": true,
+        "tooltip-format": "RAM Usage",
+        "states": {
+            "warning": 80,
+            "critical": 95
+        }
+    },
+
+    "custom/swap-usage": {
+        "exec": "free -h | awk 'NR==3{printf \"%.0f\", $3/$2 * 100}'",
+        "interval": 5,
+        "format": "󰍛 {}%",
+        "tooltip": true,
+        "tooltip-format": "Swap Usage",
+        "states": {
+            "warning": 50,
+            "critical": 80
+        }
+    }
+} 

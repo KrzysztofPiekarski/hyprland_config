@@ -22,7 +22,7 @@ Nowoczesna i elegancka konfiguracja waybar z motywem Catppuccin Mocha, oferując
 
 - `config.jsonc` - główna konfiguracja waybar
 - `style.css` - style CSS z motywem Catppuccin
-- `extra-modules.jsonc` - dodatkowe moduły do wyboru
+- `advanced-modules.jsonc` - zaawansowane widgety i moduły
 - `README.md` - ten plik
 
 ## 🚀 Instalacja
@@ -51,11 +51,11 @@ Nowoczesna i elegancka konfiguracja waybar z motywem Catppuccin Mocha, oferując
 
 ### Dodawanie dodatkowych modułów
 
-Możesz dodać moduły z pliku `extra-modules.jsonc` do głównej konfiguracji:
+Możesz dodać moduły z pliku `advanced-modules.jsonc` do głównej konfiguracji:
 
 1. Otwórz `config.jsonc`
 2. Dodaj moduł do odpowiedniej sekcji (`modules-left`, `modules-center`, `modules-right`)
-3. Skopiuj konfigurację modułu z `extra-modules.jsonc`
+3. Skopiuj konfigurację modułu z `advanced-modules.jsonc`
 
 Przykład dodania modułu Spotify:
 ```json

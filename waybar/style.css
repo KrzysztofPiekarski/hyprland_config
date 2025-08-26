@@ -1,4 +1,26 @@
-/* Catppuccin Mocha Theme - Stabilna wersja z efektami wizualnymi */
+/*
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           WAYBAR STYLESHEET                                  ║
+║                     Dual Desktop Environment Setup                          ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║ Author: Krzysztof Piekarski                                                 ║
+║ Project: Hypr_My_Configure                                                  ║
+║ Theme: Catppuccin Mocha                                                     ║
+║ Repository: https://github.com/KrzysztofPiekarski/                          ║
+║ License: MIT                                                                ║
+║ Version: 2.0                                                               ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║ Description: Modern status bar styling with:                                ║
+║ • Catppuccin Mocha color palette integration                               ║
+║ • Glassmorphism effects and transparency                                   ║
+║ • Smooth animations and hover effects                                      ║
+║ • Module-specific color coding                                             ║
+║ • Professional gradients and shadows                                       ║
+║ • Seamless integration with Hyprland/EXWM                                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+*/
+
+/* ═══════════════════════════ GLOBAL STYLES ═══════════════════════════ */
 * {
     border: none;
     border-radius: 0;
@@ -6,9 +28,10 @@
     font-weight: 500;
     font-size: 12px;
     min-height: 0;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ═══════════════════════════ MAIN WINDOW ═══════════════════════════ */
 window#waybar {
     background: linear-gradient(135deg, 
         rgba(30, 30, 46, 0.95) 0%, 
@@ -16,9 +39,13 @@ window#waybar {
         rgba(30, 30, 46, 0.95) 100%);
     color: #cdd6f4;
     border-bottom: 2px solid rgba(137, 180, 250, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 1px 0px rgba(137, 180, 250, 0.1) inset;
+    transition: all 0.3s ease;
 }
 
+/* ═══════════════════════════ TOOLTIPS ═══════════════════════════ */
 tooltip {
     background: rgba(49, 50, 68, 0.95);
     border-radius: 12px;
@@ -27,7 +54,11 @@ tooltip {
     padding: 8px 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     font-size: 12px;
+    /* backdrop-filter: blur(10px); */
+    /* -webkit-backdrop-filter: blur(10px); */
 }
+
+/* ═══════════════════════════ LEFT MODULES ═══════════════════════════ */
 
 /* Arch Linux Logo */
 #custom-arch {
@@ -100,6 +131,8 @@ tooltip {
     box-shadow: 0 2px 8px rgba(166, 227, 161, 0.2);
 }
 
+/* ═══════════════════════════ CENTER MODULES ═══════════════════════════ */
+
 /* Window Title */
 #window {
     color: #cdd6f4;
@@ -147,7 +180,9 @@ tooltip {
     box-shadow: 0 2px 8px rgba(137, 180, 250, 0.2);
 }
 
-/* Right modules with enhanced progress bars */
+/* ═══════════════════════════ RIGHT MODULES ═══════════════════════════ */
+
+/* System Information Modules with Enhanced Progress Bars */
 #network,
 #memory,
 #cpu,
@@ -334,11 +369,13 @@ tooltip {
     border: 1px solid rgba(137, 180, 250, 0.4);
 }
 
-/* Tray - ulepszony design (kompatybilny) */
+/* ═══════════════════════════ SYSTEM TRAY ═══════════════════════════ */
+
+/* System Tray - Enhanced Design (Compatible) */
 #tray {
     background: linear-gradient(135deg, rgba(49, 50, 68, 0.7), rgba(69, 71, 90, 0.6));
-    margin-right: 6px;
-    padding: 6px 10px;
+    margin: 4px 6px;
+    padding: 4px 12px;
     border-radius: 12px;
     border: 1px solid rgba(137, 180, 250, 0.3);
     border-left: 3px solid #cba6f7;
@@ -383,3 +420,14 @@ tooltip {
     border: 1px solid rgba(137, 180, 250, 0.5);
     box-shadow: 0 4px 12px rgba(203, 166, 247, 0.2);
 }
+
+/*
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                              END OF STYLESHEET                              ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║ Total Lines: 421+                                                           ║
+║ Components: Left/Center/Right modules + System Tray                         ║
+║ Features: Glassmorphism, Animations, Color-coded modules                    ║
+║ Compatibility: Hyprland/EXWM dual desktop environment                       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+*/

@@ -1,0 +1,163 @@
+/*
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           WLOGOUT STYLESHEET                                 ║
+║                     Dual Desktop Environment Setup                          ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║ Author: Krzysztof Piekarski                                                 ║
+║ Project: Hypr_My_Configure                                                  ║
+║ Theme: Catppuccin Mocha                                                     ║
+║ Repository: https://github.com/KrzysztofPiekarski/                          ║
+║ License: MIT                                                                ║
+║ Version: 2.0                                                               ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║ Description: Modern logout menu styling with:                               ║
+║ • Catppuccin Mocha color palette integration                               ║
+║ • Glassmorphism effects and transparency                                   ║
+║ • Smooth animations and hover effects                                      ║
+║ • Icon-based button design                                                 ║
+║ • Professional gradients and shadows                                       ║
+║ • Seamless integration with Hyprland/EXWM                                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+*/
+
+/* ═══════════════════════════ CATPPUCCIN MOCHA COLORS ═══════════════════════════ */
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+/* ═══════════════════════════ MAIN WINDOW ═══════════════════════════ */
+window {
+    background-color: rgba(30, 30, 46, 0.85);
+    /* backdrop-filter not supported in wlogout */
+}
+
+/* ═══════════════════════════ BUTTON CONTAINER ═══════════════════════════ */
+button {
+    color: #cdd6f4;
+    font-size: 18px;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    background-size: 40%;
+    border-style: solid;
+    background-color: rgba(49, 50, 68, 0.8);
+    border: 2px solid rgba(88, 91, 112, 0.6);
+    border-radius: 20px;
+    margin: 20px;
+    padding: 25px;
+    min-width: 140px;
+    min-height: 140px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 1px 0px rgba(205, 214, 244, 0.1) inset;
+}
+
+button:focus, button:active, button:hover {
+    background-color: rgba(69, 71, 90, 0.9);
+    border: 2px solid rgba(137, 180, 250, 0.8);
+    color: #89b4fa;
+    background-size: 45%;
+    /* transform not supported in wlogout */
+    box-shadow: 
+        0 12px 40px rgba(137, 180, 250, 0.3),
+        0 1px 0px rgba(137, 180, 250, 0.2) inset;
+}
+
+/* ═══════════════════════════ INDIVIDUAL BUTTON STYLES ═══════════════════════════ */
+
+/* Lock Button */
+#lock {
+    background-image: url("icons/lock.svg");
+    border-left: 4px solid #f9e2af;
+}
+
+#lock:focus, #lock:active, #lock:hover {
+    border-left: 4px solid #f9e2af;
+    color: #f9e2af;
+    box-shadow: 
+        0 12px 40px rgba(249, 226, 175, 0.3),
+        0 1px 0px rgba(249, 226, 175, 0.2) inset;
+}
+
+/* Logout Button */
+#logout {
+    background-image: url("icons/logout.svg");
+    border-left: 4px solid #f38ba8;
+}
+
+#logout:focus, #logout:active, #logout:hover {
+    border-left: 4px solid #f38ba8;
+    color: #f38ba8;
+    box-shadow: 
+        0 12px 40px rgba(243, 139, 168, 0.3),
+        0 1px 0px rgba(243, 139, 168, 0.2) inset;
+}
+
+/* Suspend Button */
+#suspend {
+    background-image: url("icons/suspend.svg");
+    border-left: 4px solid #89b4fa;
+}
+
+#suspend:focus, #suspend:active, #suspend:hover {
+    border-left: 4px solid #89b4fa;
+    color: #89b4fa;
+    box-shadow: 
+        0 12px 40px rgba(137, 180, 250, 0.3),
+        0 1px 0px rgba(137, 180, 250, 0.2) inset;
+}
+
+/* Hibernate Button */
+#hibernate {
+    background-image: url("icons/hibernate.svg");
+    border-left: 4px solid #cba6f7;
+}
+
+#hibernate:focus, #hibernate:active, #hibernate:hover {
+    border-left: 4px solid #cba6f7;
+    color: #cba6f7;
+    box-shadow: 
+        0 12px 40px rgba(203, 166, 247, 0.3),
+        0 1px 0px rgba(203, 166, 247, 0.2) inset;
+}
+
+/* Reboot Button */
+#reboot {
+    background-image: url("icons/reboot.svg");
+    border-left: 4px solid #fab387;
+}
+
+#reboot:focus, #reboot:active, #reboot:hover {
+    border-left: 4px solid #fab387;
+    color: #fab387;
+    box-shadow: 
+        0 12px 40px rgba(250, 179, 135, 0.3),
+        0 1px 0px rgba(250, 179, 135, 0.2) inset;
+}
+
+/* Shutdown Button */
+#shutdown {
+    background-image: url("icons/shutdown.svg");
+    border-left: 4px solid #a6e3a1;
+}
+
+#shutdown:focus, #shutdown:active, #shutdown:hover {
+    border-left: 4px solid #a6e3a1;
+    color: #a6e3a1;
+    box-shadow: 
+        0 12px 40px rgba(166, 227, 161, 0.3),
+        0 1px 0px rgba(166, 227, 161, 0.2) inset;
+}
+
+/*
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                              END OF STYLESHEET                              ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║ Total Lines: 135+                                                           ║
+║ Components: Window, Buttons, Hover Effects                                  ║
+║ Features: Glassmorphism, Animations, Color Coding                          ║
+║ Compatibility: Hyprland, EXWM, Wayland, X11                               ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+*/

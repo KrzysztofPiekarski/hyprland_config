@@ -8,11 +8,13 @@ Provides a beautiful and functional dual desktop environment on Arch Linux with 
 
 > **🇵🇱 Polish version available:** [README_PL.md](README_PL.md)
 
+![Version](https://img.shields.io/badge/Version-2.1-blue?style=for-the-badge)
 ![Hyprland Preview](https://img.shields.io/badge/Hyprland-Ready-blue?style=for-the-badge&logo=wayland)
 ![EXWM](https://img.shields.io/badge/EXWM-Ready-green?style=for-the-badge&logo=gnu-emacs)
 ![Catppuccin](https://img.shields.io/badge/Theme-Catppuccin%20Mocha-pink?style=for-the-badge)
 ![Arch Linux](https://img.shields.io/badge/Arch-Linux-1793D1?style=for-the-badge&logo=arch-linux)
 ![Dual Desktop](https://img.shields.io/badge/Dual-Desktop-orange?style=for-the-badge)
+![wlogout](https://img.shields.io/badge/wlogout-Integrated-purple?style=for-the-badge)
 
 ## 🎨 **Theme and Design**
 
@@ -157,6 +159,7 @@ Hyprland
 | `Super + Return` | Open terminal (Kitty) |
 | `Super + R` | Application launcher (Rofi) |
 | `Super + Q` | Close Hyprland |
+| `Super + Shift + Q` | Logout menu (Wlogout) |
 | `Super + C` | Close active window |
 | `Super + F` | File manager (Thunar) |
 | `Super + B` | Browser (Firefox) |
@@ -228,6 +231,14 @@ Hyprland
 
 ## 🎯 **Features**
 
+### ⭐ **Latest Updates (v2.1)**
+- ✅ **Complete wlogout integration** - Professional logout menu with custom SVG icons
+- ✅ **Enhanced Waybar styling** - Fixed CSS issues and improved visual consistency  
+- ✅ **High-quality SVG icons** - Custom-designed icons with Catppuccin Mocha colors
+- ✅ **Unified file structure** - Professional headers and consistent documentation
+- ✅ **Bug fixes** - Resolved Hyprland, Waybar, Dunst, and Rofi configuration errors
+- ✅ **English documentation** - Complete translation and structured README
+
 ### 🎨 **Personalization**
 - **Dynamic gaps** - `Super + Ctrl + Shift + +/-`
 - **Gap modes** - `Super + Ctrl + Shift + 1/2/3/0`
@@ -242,11 +253,23 @@ Hyprland
 - 🕒 Clock with calendar
 - 🎵 Media control
 
+### 🚪 **Logout Menu (wlogout)**
+- 🔒 **Lock** - Secure screen lock (hyprlock)
+- 🚪 **Logout** - Exit current session
+- 😴 **Suspend** - Sleep mode with RAM retention
+- 🛌 **Hibernate** - Deep sleep to disk
+- 🔄 **Reboot** - System restart
+- ⚡ **Shutdown** - Complete power off
+- 🎨 **Custom SVG icons** with Catppuccin Mocha colors
+- ✨ **Glassmorphism effects** and smooth animations
+
 ### ⚡ **Optimizations**
 - VRR (Variable Refresh Rate) for 120Hz+ monitors
 - VFR (Variable Frame Rate) for power saving
 - Intelligent DPMS management
 - Window swallowing for terminals
+- CSS optimization and error-free styling
+- Proper protocol handling (layer-shell for wlogout)
 
 ## 🗂️ **File Structure**
 
@@ -261,8 +284,20 @@ Hypr_My_Configure/
 ├── waybar/                # Status bar
 │   ├── config.jsonc       # Module configuration
 │   ├── style.css          # CSS styles
-│   ├── extra-modules.jsonc # Additional modules
-│   └── scripts/           # Custom scripts
+│   ├── advanced-modules.jsonc # Advanced widgets collection
+│   └── README.md          # Waybar documentation
+├── wlogout/               # Logout menu
+│   ├── layout             # Button layout (JSON)
+│   ├── style.css          # Catppuccin styling with glassmorphism
+│   ├── launch_wlogout.sh  # Launcher script (executable)
+│   ├── icons/             # Custom SVG icons (high quality)
+│   │   ├── lock.svg       # Lock screen icon
+│   │   ├── logout.svg     # Logout icon
+│   │   ├── suspend.svg    # Suspend icon
+│   │   ├── hibernate.svg  # Hibernate icon
+│   │   ├── reboot.svg     # Reboot icon
+│   │   └── shutdown.svg   # Shutdown icon
+│   └── README.md          # Documentation
 ├── kitty/                 # Terminal
 │   ├── kitty.conf         # Main configuration
 │   └── current-theme.conf # Catppuccin theme

@@ -1,0 +1,186 @@
+{
+    "custom/updates": {
+        "exec": "checkupdates | wc -l",
+        "interval": 1800,
+        "format": "󰁌 {}",
+        "tooltip": true,
+        "tooltip-format": "System updates available",
+        "on-click": "kitty --title 'System Updates' -e sudo pacman -Syu",
+        "states": {
+            "warning": 10,
+            "critical": 25
+        }
+    },
+
+    "custom/clipboard": {
+        "exec": "cliphist list | wc -l",
+        "interval": 5,
+        "format": "󰅇 {}",
+        "tooltip": true,
+        "tooltip-format": "Clipboard history",
+        "on-click": "cliphist list | rofi -dmenu | cliphist decode | wl-copy",
+        "on-click-right": "cliphist wipe"
+    },
+
+    "custom/keybindings": {
+        "format": "󰌌",
+        "tooltip": true,
+        "tooltip-format": "Show keybindings",
+        "on-click": "kitty --title 'Hyprland Keybindings' -e less ~/.config/hypr/keybindings.txt"
+    },
+
+    "custom/screenshot": {
+        "format": "󰹑",
+        "tooltip": true,
+        "tooltip-format": "Screenshot tools",
+        "on-click": "hyprshot -m region",
+        "on-click-right": "hyprshot -m window",
+        "on-click-middle": "hyprshot -m output"
+    },
+
+    "custom/colorpicker": {
+        "format": "󰸌",
+        "tooltip": true,
+        "tooltip-format": "Color picker",
+        "on-click": "hyprpicker -a && notify-send 'Color copied to clipboard'"
+    },
+
+    "custom/wallpaper": {
+        "format": "󰏩",
+        "tooltip": true,
+        "tooltip-format": "Change wallpaper",
+        "on-click": "find ~/Pictures/wallpapers -type f | rofi -dmenu | xargs hyprctl hyprpaper wallpaper eDP-1,",
+        "on-click-right": "hyprctl hyprpaper wallpaper eDP-1,~/Pictures/wallpapers/default.jpg"
+    },
+
+    "custom/gaming-mode": {
+        "exec": "pgrep -x gamemode > /dev/null && echo '󰊖' || echo '󰊗'",
+        "interval": 5,
+        "format": "{}",
+        "tooltip": true,
+        "tooltip-format": "Gaming mode toggle",
+        "on-click": "pgrep -x gamemode > /dev/null && pkill gamemode || gamemoded"
+    },
+
+    "custom/caffeine": {
+        "exec": "pgrep -x hypridle > /dev/null && echo '󰒳' || echo '󰒲'",
+        "interval": 5,
+        "format": "{}",
+        "tooltip": true,
+        "tooltip-format": "Caffeine mode (prevent sleep)",
+        "on-click": "pgrep -x hypridle > /dev/null && pkill hypridle || hypridle &"
+    },
+
+    "custom/containers": {
+        "exec": "docker ps -q | wc -l 2>/dev/null || echo '0'",
+        "interval": 10,
+        "format": "󰡨 {}",
+        "tooltip": true,
+        "tooltip-format": "Running containers",
+        "on-click": "kitty --title 'Docker Status' -e docker ps"
+    },
+
+    "custom/github": {
+        "exec": "gh api user/notifications 2>/dev/null | jq '. | length' 2>/dev/null || echo '0'",
+        "interval": 300,
+        "format": "󰊤 {}",
+        "tooltip": true,
+        "tooltip-format": "GitHub notifications",
+        "on-click": "firefox https://github.com/notifications"
+    },
+
+    "custom/crypto": {
+        "exec": "curl -s 'https://api.coinbase.com/v2/exchange-rates?currency=BTC' | jq -r '.data.rates.USD' | cut -c1-5 2>/dev/null || echo 'N/A'",
+        "interval": 300,
+        "format": "󰠓 ${}k",
+        "tooltip": true,
+        "tooltip-format": "Bitcoin price (USD)"
+    },
+
+    "custom/weather-detailed": {
+        "exec": "curl -s 'https://wttr.in/Tarnobrzeg?format=%C+%t+%w+%h' 2>/dev/null || echo 'Weather N/A'",
+        "interval": 600,
+        "format": "{}",
+        "tooltip": true,
+        "tooltip-format": "Detailed weather info",
+        "on-click": "firefox https://wttr.in/Tarnobrzeg"
+    },
+
+    "custom/system-monitor": {
+        "format": "󰦻",
+        "tooltip": true,
+        "tooltip-format": "System monitor",
+        "on-click": "kitty --title 'System Monitor' -e btop",
+        "on-click-right": "kitty --title 'System Monitor' -e htop"
+    },
+
+    "custom/package-manager": {
+        "format": "󰏖",
+        "tooltip": true,
+        "tooltip-format": "Package management",
+        "on-click": "kitty --title 'Package Manager' -e yay",
+        "on-click-right": "pamac-manager"
+    },
+
+    "custom/file-manager": {
+        "format": "󰉋",
+        "tooltip": true,
+        "tooltip-format": "File management",
+        "on-click": "thunar",
+        "on-click-right": "kitty --title 'Terminal File Manager' -e ranger"
+    },
+
+    "custom/calculator": {
+        "format": "󰃬",
+        "tooltip": true,
+        "tooltip-format": "Calculator",
+        "on-click": "galculator",
+        "on-click-right": "qalculate-gtk"
+    },
+
+    "custom/emoji": {
+        "format": "󰞅",
+        "tooltip": true,
+        "tooltip-format": "Emoji picker",
+        "on-click": "rofimoji --action copy"
+    },
+
+    "custom/todo": {
+        "exec": "task +PENDING count 2>/dev/null || echo '0'",
+        "interval": 60,
+        "format": "󰗒 {}",
+        "tooltip": true,
+        "tooltip-format": "Pending tasks",
+        "on-click": "kitty --title 'TaskWarrior' -e task"
+    },
+
+    "custom/workspace-layout": {
+        "exec": "hyprctl getoption general:layout | grep -o 'dwindle\\|master'",
+        "interval": 5,
+        "format": "{}",
+        "tooltip": true,
+        "tooltip-format": "Current layout",
+        "on-click": "hyprctl keyword general:layout master",
+        "on-click-right": "hyprctl keyword general:layout dwindle"
+    },
+
+    "custom/microphone": {
+        "exec": "wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '{print $2 * 100}' | cut -d. -f1",
+        "interval": 1,
+        "format": "󰍬 {}%",
+        "tooltip": true,
+        "tooltip-format": "Microphone volume",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
+    },
+
+    "custom/screen-record": {
+        "exec": "pgrep -x wf-recorder > /dev/null && echo '󰑊' || echo '󰕧'",
+        "interval": 2,
+        "format": "{}",
+        "tooltip": true,
+        "tooltip-format": "Screen recording",
+        "on-click": "pgrep -x wf-recorder > /dev/null && pkill wf-recorder || wf-recorder -f ~/Videos/screen-$(date +%Y%m%d_%H%M%S).mp4"
+    }
+}

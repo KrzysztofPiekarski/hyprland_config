@@ -1,3 +1,23 @@
+// ╔══════════════════════════════════════════════════════════════════════════════╗
+// ║                           WAYBAR CONFIGURATION                              ║
+// ║                     Dual Desktop Environment Setup                          ║
+// ╠══════════════════════════════════════════════════════════════════════════════╣
+// ║ Author: Krzysztof Piekarski                                                 ║
+// ║ Project: Hypr_My_Configure                                                  ║
+// ║ Theme: Catppuccin Mocha                                                     ║
+// ║ Repository: https://github.com/KrzysztofPiekarski/                          ║
+// ║ License: MIT                                                                ║
+// ║ Version: 2.0                                                               ║
+// ╠══════════════════════════════════════════════════════════════════════════════╣
+// ║ Description: Modern status bar configuration with:                          ║
+// ║ • Custom modules for system monitoring                                      ║
+// ║ • Weather integration (Tarnobrzeg)                                         ║
+// ║ • Network, CPU, Memory, Battery monitoring                                  ║
+// ║ • Audio control with microphone support                                     ║
+// ║ • Workspace integration with Hyprland                                       ║
+// ║ • Power menu and application launcher                                       ║
+// ╚══════════════════════════════════════════════════════════════════════════════╝
+
 {
     "layer": "top",
     "position": "top",

@@ -1,3 +1,23 @@
+# ╔══════════════════════════════════════════════════════════════════════════════╗
+# ║                            DUNST CONFIGURATION                              ║
+# ║                     Dual Desktop Environment Setup                          ║
+# ╠══════════════════════════════════════════════════════════════════════════════╣
+# ║ Author: Krzysztof Piekarski                                                 ║
+# ║ Project: Hypr_My_Configure                                                  ║
+# ║ Theme: Catppuccin Mocha                                                     ║
+# ║ Repository: https://github.com/KrzysztofPiekarski/                          ║
+# ║ License: MIT                                                                ║
+# ║ Version: 2.0                                                               ║
+# ╠══════════════════════════════════════════════════════════════════════════════╣
+# ║ Description: Notification daemon configuration with:                        ║
+# ║ • Catppuccin Mocha color scheme                                            ║
+# ║ • System icon integration                                                  ║
+# ║ • Custom notification styling                                              ║
+# ║ • Progress bar support                                                     ║
+# ║ • Audio/backlight specific notifications                                   ║
+# ║ • Seamless integration with Hyprland/EXWM                                 ║
+# ╚══════════════════════════════════════════════════════════════════════════════╝
+
 [global]
     monitor = 0
     follow = mouse

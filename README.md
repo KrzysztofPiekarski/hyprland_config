@@ -8,7 +8,7 @@ Provides a beautiful and functional dual desktop environment on Arch Linux with 
 
 > **🇵🇱 Polish version available:** [README_PL.md](README_PL.md)
 
-![Version](https://img.shields.io/badge/Version-2.1-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-2.2-blue?style=for-the-badge)
 ![Hyprland Preview](https://img.shields.io/badge/Hyprland-Ready-blue?style=for-the-badge&logo=wayland)
 ![EXWM](https://img.shields.io/badge/EXWM-Ready-green?style=for-the-badge&logo=gnu-emacs)
 ![Catppuccin](https://img.shields.io/badge/Theme-Catppuccin%20Mocha-pink?style=for-the-badge)
@@ -231,7 +231,15 @@ Hyprland
 
 ## 🎯 **Features**
 
-### ⭐ **Latest Updates (v2.1)**
+### ⭐ **Latest Updates (v2.2)**
+- ✅ **Weather widget improvements** - Enhanced rate limiting protection and reliability
+- ✅ **Smart API handling** - Multiple fallback endpoints and timeout protection
+- ✅ **Intelligent caching** - 30-minute cache with progressive retry strategies
+- ✅ **Enhanced error detection** - Automatic "rate limit exceeded" message handling
+- ✅ **Robust weather script** - Random delays, custom User-Agent, multiple APIs
+- ✅ **Visual consistency** - Unified Nerd Font icons throughout Waybar
+
+### 🔄 **Previous Updates (v2.1)**
 - ✅ **Complete wlogout integration** - Professional logout menu with custom SVG icons
 - ✅ **Enhanced Waybar styling** - Fixed CSS issues and improved visual consistency  
 - ✅ **High-quality SVG icons** - Custom-designed icons with Catppuccin Mocha colors
@@ -245,13 +253,14 @@ Hyprland
 - **Thematic workspaces** - `Super + Alt + B/C/F/D/G/M`
 
 ### 📊 **Waybar modules**
-- 🌡️ Weather (Tarnobrzeg)
-- 📶 Network with bandwidth monitoring
-- 🔋 Battery with advanced states
-- 🔊 Audio with microphone control
-- 💾 RAM and CPU usage
-- 🕒 Clock with calendar
-- 🎵 Media control
+- 🌡️ **Weather (Tarnobrzeg)** - Smart rate limiting with multiple API endpoints
+- 📶 **Network** - Bandwidth monitoring with connection status
+- 🔋 **Battery** - Advanced states with charging indicators
+- 🔊 **Audio** - Volume control with microphone management
+- 💾 **System** - RAM and CPU usage monitoring
+- 🕒 **Clock** - Time display with calendar integration
+- 🎵 **Media** - Playerctl integration for music control
+- ⚡ **Arch Launcher** - Quick application access with `[A]` indicator
 
 ### 🚪 **Logout Menu (wlogout)**
 - 🔒 **Lock** - Secure screen lock (hyprlock)
@@ -285,6 +294,8 @@ Hypr_My_Configure/
 │   ├── config.jsonc       # Module configuration
 │   ├── style.css          # CSS styles
 │   ├── advanced-modules.jsonc # Advanced widgets collection
+│   ├── scripts/           # Custom scripts
+│   │   └── weather.sh     # Weather API with rate limiting
 │   └── README.md          # Waybar documentation
 ├── wlogout/               # Logout menu
 │   ├── layout             # Button layout (JSON)
@@ -373,10 +384,17 @@ Emacs can use different fonts. Add to init.el:
 ## 🔧 **Customization**
 
 ### 🌍 **Change weather location**
-In `waybar/config.jsonc` change `Tarnobrzeg` to your city:
-```json
-"exec": "curl -s 'https://wttr.in/YourCity?format=%C+%t+%h+%w'"
+Edit the weather script `waybar/scripts/weather.sh` and change the location:
+```bash
+LOCATION="${1:-YourCity}"  # Change "Tarnobrzeg" to your city
 ```
+
+The script includes advanced features:
+- **Rate limiting protection** - Automatic delays and fallback APIs
+- **Multiple endpoints** - `wttr.in` and `v1.wttr.in` for redundancy  
+- **Smart caching** - 30-minute cache with error handling
+- **User-Agent** - Custom header to avoid bot detection
+- **Progressive retries** - Multiple attempts with increasing delays
 
 ### 🖼️ **Add avatar**
 Copy your photo as `~/.face` and uncomment section in `hypr/hyprlock.conf`
@@ -448,6 +466,26 @@ wpctl status
 # Check NetworkManager
 systemctl status NetworkManager
 sudo systemctl enable --now NetworkManager
+```
+
+### 🌡️ **Weather widget troubleshooting**
+```bash
+# Test weather script manually
+~/.config/waybar/scripts/weather.sh
+
+# Check cache status
+ls -la /tmp/waybar_weather_cache
+cat /tmp/waybar_weather_cache
+
+# Clear cache and test
+rm /tmp/waybar_weather_cache
+~/.config/waybar/scripts/weather.sh
+
+# Common issues and solutions:
+# - "This query is already being processed" → Fixed with rate limiting
+# - Empty response → Multiple API endpoints provide fallback
+# - Slow loading → 30-minute cache reduces API calls
+# - Network timeout → Progressive retry with delays
 ```
 
 ## 🤝 **Contributing**

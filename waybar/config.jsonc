@@ -117,12 +117,14 @@
     },
 
     "custom/weather": {
-        "exec": "curl -s 'https://wttr.in/Tarnobrzeg?format=%t' | head -c -1",
+        "exec": "~/.config/waybar/scripts/weather.sh",
         "interval": 1800,
         "format": " {}",
         "tooltip": true,
-        "tooltip-format": "Weather in Tarnobrzeg\nClick for detailed forecast",
-        "on-click": "xdg-open https://wttr.in/Tarnobrzeg"
+        "tooltip-format": "Weather in Tarnobrzeg\nClick for detailed forecast\nUpdates every 30 minutes\nCached with rate limit protection",
+        "on-click": "xdg-open https://wttr.in/Tarnobrzeg",
+        "signal": 8,
+        "restart-interval": 120
     },
 
     "clock": {

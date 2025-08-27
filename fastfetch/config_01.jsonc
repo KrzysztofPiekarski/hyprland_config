@@ -1,10 +1,29 @@
+// ╔══════════════════════════════════════════════════════════════════════════════╗
+// ║                         FASTFETCH CONFIGURATION #01                         ║
+// ║                     Dual Desktop Environment Setup                          ║
+// ╠══════════════════════════════════════════════════════════════════════════════╣
+// ║ Author: Krzysztof Piekarski                                                 ║
+// ║ Project: Hypr_My_Configure                                                  ║
+// ║ Theme: Catppuccin Mocha                                                     ║
+// ║ Repository: https://github.com/KrzysztofPiekarski/                          ║
+// ║ License: MIT                                                                ║
+// ║ Version: 2.0                                                               ║
+// ╠══════════════════════════════════════════════════════════════════════════════╣
+// ║ Description: Professional system information layout with:                   ║
+// ║ • Catppuccin Mocha color scheme                                            ║
+// ║ • Comprehensive system information                                         ║
+// ║ • Clean box-drawing layout                                                 ║
+// ║ • Professional quotes and styling                                          ║
+// ║ • Seamless integration with Hyprland/EXWM                                 ║
+// ╚══════════════════════════════════════════════════════════════════════════════╝
+
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "general": {
     "multithreading": true
   },
   "logo": {
-        "source": "$(find \"/home/USER/.config/fastfetch/\" -name \"*.png\" | sort -R | head -1)",
+        "source": "$(find \"$HOME/.config/fastfetch/\" -name \"*.png\" | sort -R | head -1)",
         "padding": {"top": 8},
         "height": 14
     },

@@ -1,0 +1,184 @@
+// ╔══════════════════════════════════════════════════════════════════════════════╗
+// ║                         FASTFETCH CONFIGURATION - MODERN                    ║
+// ║                     Dual Desktop Environment Setup                          ║
+// ╠══════════════════════════════════════════════════════════════════════════════╣
+// ║ Author: Krzysztof Piekarski                                                 ║
+// ║ Project: Hypr_My_Configure                                                  ║
+// ║ Theme: Catppuccin Mocha                                                     ║
+// ║ Repository: https://github.com/KrzysztofPiekarski/                          ║
+// ║ License: MIT                                                                ║
+// ║ Version: 2.0                                                               ║
+// ╠══════════════════════════════════════════════════════════════════════════════╣
+// ║ Description: Modern system information display with:                        ║
+// ║ • Authentic Catppuccin Mocha color palette                                 ║
+// ║ • Professional layout and typography                                       ║
+// ║ • JetBrains Mono Nerd Font consistency                                     ║
+// ║ • Clean box-drawing characters                                             ║
+// ║ • Seamless integration with Hyprland/EXWM                                 ║
+// ╚══════════════════════════════════════════════════════════════════════════════╝
+
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  "logo": {
+    "source": "auto",
+    "padding": {"top": 6},
+    "height": 16
+  },
+  "display": {
+    "separator": "    ",
+    "color": {
+      "output": "blue"
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "color": {
+        "user": "magenta",
+        "at": "white", 
+        "host": "blue"
+      },
+      "format": "╭─────────────────────────────────────  {6} 󰣘 {7} 󰣙 {8} 󰌏 ─────────────────────────────────────╮"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "       Dual Desktop Environment: Hyprland & EXWM - Modern Wayland Experience       ",
+      "color": "white"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "┌─────────────────────────────────────── System ───────────────────────────────────────┐",
+      "color": "red"
+    },
+    {
+      "type": "os",
+      "key": "├ OS         ",
+      "keyColor": "red"
+    },
+    {
+      "type": "kernel",
+      "key": "├ Kernel     ",
+      "keyColor": "red"
+    },
+    {
+      "type": "packages",
+      "key": "├ Packages   ",
+      "keyColor": "red"
+    },
+    {
+      "type": "uptime",
+      "key": "├ Uptime     ",
+      "keyColor": "red"
+    },
+    {
+      "type": "shell",
+      "key": "├ Shell      ",
+      "keyColor": "red"
+    },
+    {
+      "type": "terminal",
+      "key": "├ Terminal   ",
+      "keyColor": "red"
+    },
+    {
+      "type": "terminalfont",
+      "key": "└ Font       ",
+      "keyColor": "red"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "┌────────────────────────────────────── Desktop ───────────────────────────────────────┐",
+      "color": "green"
+    },
+    {
+      "type": "de",
+      "key": "├ DE         ",
+      "keyColor": "green"
+    },
+    {
+      "type": "wm",
+      "key": "├ WM         ",
+      "keyColor": "green"
+    },
+    {
+      "type": "wmtheme",
+      "key": "├ WM Theme   ",
+      "keyColor": "green"
+    },
+    {
+      "type": "theme",
+      "key": "├ GTK Theme  ",
+      "keyColor": "green"
+    },
+    {
+      "type": "icons",
+      "key": "├ Icons      ",
+      "keyColor": "green"
+    },
+    {
+      "type": "cursor",
+      "key": "├ Cursor     ",
+      "keyColor": "green"
+    },
+    {
+      "type": "font",
+      "key": "└ Font       ",
+      "keyColor": "green"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "┌─────────────────────────────────────── Hardware ─────────────────────────────────────┐",
+      "color": "blue"
+    },
+    {
+      "type": "cpu",
+      "key": "├ CPU        ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "gpu",
+      "key": "├ GPU        ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "memory",
+      "key": "├ Memory     ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "swap",
+      "key": "├ Swap       ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "disk",
+      "key": "├ Disk       ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "localip",
+      "key": "└ Local IP   ",
+      "keyColor": "blue"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "╰─────────────────────────────────── CATPPUCCIN MOCHA ───────────────────────────────────╯",
+      "color": "magenta"
+    },
+    {
+      "type": "colors",
+      "paddingLeft": 25,
+      "symbol": "circle",
+      "block": {
+        "width": 4,
+        "height": 1
+      }
+    }
+  ]
+}

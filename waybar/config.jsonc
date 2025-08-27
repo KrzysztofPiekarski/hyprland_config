@@ -48,7 +48,7 @@
     ],
 
     "custom/arch": {
-        "format": " ",
+        "format": "[A]",
         "on-click": "rofi -show drun -theme ~/.config/rofi/catppuccin.rasi",
         "on-click-right": "rofi -show run -theme ~/.config/rofi/catppuccin.rasi",
         "tooltip": true,
@@ -117,11 +117,11 @@
     },
 
     "custom/weather": {
-        "exec": "curl -s 'https://wttr.in/Tarnobrzeg?format=%C+%t+%h+%w' | head -c -1",
+        "exec": "curl -s 'https://wttr.in/Tarnobrzeg?format=%t' | head -c -1",
         "interval": 1800,
         "format": " {}",
         "tooltip": true,
-        "tooltip-format": "Click to open detailed weather",
+        "tooltip-format": "Weather in Tarnobrzeg\nClick for detailed forecast",
         "on-click": "xdg-open https://wttr.in/Tarnobrzeg"
     },
 

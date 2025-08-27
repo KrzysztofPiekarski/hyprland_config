@@ -1,12 +1,31 @@
+// ╔══════════════════════════════════════════════════════════════════════════════╗
+// ║                         ROFI CATPPUCCIN MOCHA THEME                         ║
+// ║                     Dual Desktop Environment Setup                          ║
+// ╠══════════════════════════════════════════════════════════════════════════════╣
+// ║ Author: Krzysztof Piekarski                                                 ║
+// ║ Project: Hypr_My_Configure                                                  ║
+// ║ Theme: Catppuccin Mocha                                                     ║
+// ║ Repository: https://github.com/KrzysztofPiekarski/                          ║
+// ║ License: MIT                                                                ║
+// ║ Version: 2.0                                                               ║
+// ╠══════════════════════════════════════════════════════════════════════════════╣
+// ║ Description: Authentic Catppuccin Mocha color palette for Rofi:             ║
+// ║ • Base: #1e1e2e (Background)                                              ║
+// ║ • Blue: #89b4fa (Accent)                                                  ║
+// ║ • Text: #cdd6f4 (Foreground)                                              ║
+// ║ • Pink: #f5c2e7 (Selection)                                               ║
+// ║ • Seamless integration with Hyprland/EXWM                                 ║
+// ╚══════════════════════════════════════════════════════════════════════════════╝
+
 * {
-    bg-col:  #1E1D2F;
-    bg-col-light: #1E1D2F;
-    border-col: #1E1D2F;
-    selected-col: #1E1D2F;
-    blue: #7aa2f7;
-    fg-col: #D9E0EE;
-    fg-col2: #F28FAD;
-    grey: #D9E0EE;
+    bg-col:  #1e1e2e;
+    bg-col-light: #313244;
+    border-col: #89b4fa;
+    selected-col: #585b70;
+    blue: #89b4fa;
+    fg-col: #cdd6f4;
+    fg-col2: #f5c2e7;
+    grey: #6c7086;
     width: 600;
 }
 

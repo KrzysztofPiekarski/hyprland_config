@@ -99,21 +99,24 @@ C-c C-e r (EXWM)
 ```bash
 # Basic packages (Arch Linux)
 sudo pacman -S hyprland waybar kitty rofi dunst polkit-gnome
+sudo pacman -S hyprpaper hypridle hyprlock
+sudo pacman -S xdg-desktop-portal-hyprland qt5-wayland qt6-wayland
 sudo pacman -S brightnessctl pamixer playerctl wl-clipboard
-sudo pacman -S grim slurp hyprshot networkmanager blueman
+sudo pacman -S grim slurp hyprshot networkmanager blueman bluez-utils
 
 # Fonts - choose one or more according to preference
 sudo pacman -S nerd-fonts-jetbrains-mono ttf-font-awesome    # Recommended
 # Alternative popular fonts for editors:
-sudo pacman -S nerd-fonts-fira-code                         # Fira Code with ligatures
-sudo pacman -S nerd-fonts-iosevka                           # Iosevka - compact
+sudo pacman -S ttf-firacode-nerd                         # Fira Code with ligatures
+sudo pacman -S ttf-iosevka-nerd                           # Iosevka - compact
 sudo pacman -S ttf-cascadia-code                            # Cascadia Code (Microsoft)
-sudo pacman -S nerd-fonts-hack                              # Hack - readable 
+sudo pacman -S ttf-hack-nerd                              # Hack - readable 
 sudo pacman -S ttf-meslo-nerd                               # Meslo Nerd 
+sudo pacman -S noto-fonts-emoji
 
 # Optional for full functionality
 sudo pacman -S thunar firefox fastfetch neovim emacs
-yay -S hyprlock hypridle hyprpaper wlogout                  # or from AUR
+yay -S wlogout                  # or from AUR
 
 # Additional editor configurations (optional)
 # Emacs with EXWM - complete desktop environment: https://github.com/KrzysztofPiekarski/emacsAI_2
